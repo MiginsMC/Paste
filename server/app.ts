@@ -1,7 +1,7 @@
-import { randomBytes } from "crypto";
-import express from "express";
+import { randomBytes } from 'crypto';
+import express from 'express';
 import { json } from 'body-parser';
-import { PasteModel } from "./model/paste";
+import { PasteModel } from './model/paste';
 import { mongoose } from '@typegoose/typegoose';
 import cors from 'cors';
 require('dotenv').config();
@@ -16,7 +16,7 @@ app.use(cors());
 		useNewUrlParser: true,
 		useUnifiedTopology: true,
 	});
-	})();
+})();
 
 app.post('/api/pastes', async (req, res) => {
 	const { content } = req.body;
@@ -27,7 +27,7 @@ app.post('/api/pastes', async (req, res) => {
 		return res.status(201).json({ id, deleteId, content });
 	}
 	res.sendStatus(400);
-})
+});
 
 app.get('/api/pastes/:id', async (req, res) => {
 	const paste = await PasteModel.findById(req.params.id);
@@ -36,14 +36,14 @@ app.get('/api/pastes/:id', async (req, res) => {
 });
 
 app.delete('/api/pastes/:deleteId', async (req, res) => {
-		const { deleteId } = req.params;
-		const c = await PasteModel.findOne({ deleteId });
-		if (c) {
-			c.delete();
-			return res.sendStatus(200);
-		}
-		res.sendStatus(404);
-})
+	const { deleteId } = req.params;
+	const c = await PasteModel.findOne({ deleteId });
+	if (c) {
+		c.delete();
+		return res.sendStatus(200);
+	}
+	res.sendStatus(404);
+});
 
 app.listen(port, () => console.log(`Listening on port ${port}!`));
 // https, see intellisense of listen method
@@ -51,7 +51,7 @@ app.listen(port, () => console.log(`Listening on port ${port}!`));
 async function createId(): Promise<string> {
 	const id = randomBytes(3).toString('hex');
 	if (await PasteModel.findById(id)) return createId();
-	return id; 
+	return id;
 }
 
 async function createDeleteId(): Promise<string> {

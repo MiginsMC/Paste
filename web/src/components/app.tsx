@@ -5,7 +5,7 @@ import Paste from './paste';
 import Create from './create';
 
 function App() {
-  return (
+	return (
 		<div className="App">
 			<BrowserRouter>
 				<Switch>
