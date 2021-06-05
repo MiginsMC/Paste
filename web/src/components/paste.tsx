@@ -31,16 +31,15 @@ export default function Paste() {
 	return (
 		<div className="App min-h-screen bg-green-900 font-mono">
 			{/* <input className="h-100 w-100 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-5"></input> */}
-			<p className="px-10 py-4 text-green-50 whitespace-pre-wrap flex-wrap w-10/12 m-auto placeholder-green-200 text-sm text-green-100 bg-green-700 shadow-xl rounded-lg border border-green-800">
-				{loading === true ? 'Loading...' : ''}{' '}
-				{errored === true ? 'Paste not found' : ''}{' '}
+			<div className="px-10 py-4 text-green-50 whitespace-pre-wrap flex-wrap w-10/12 m-auto placeholder-green-200 text-sm text-green-100 bg-green-700 shadow-xl rounded-lg border border-green-800">
+				{loading === true ? 'Loading...' : ''}{''}
+				{errored === true ? 'Paste not found' : ''}{''}
 				{content
-					?.trim()
-					.split('\n')
+        ?.split('\n')
 					.map(e => (
-						<p>{e}</p>
+					 <p>{e}</p>
 					))}
-			</p>
+			</div>
 		</div>
 	);
 }
