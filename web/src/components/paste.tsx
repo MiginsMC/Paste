@@ -2,7 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import '../index.css';
 
-export default function Paste() {
+interface propTypes {
+	raw?: true;
+}
+
+export default function Paste(props: propTypes) {
 	const [content, setContent] = useState<string>();
 	const [loading, setLoading] = useState(false);
 	const [errored, setErrored] = useState(false);
@@ -29,16 +33,24 @@ export default function Paste() {
 	}, [id]);
 
 	return (
-		<div className="App min-h-screen bg-green-900 font-mono">
+		<div
+			className={`${props.raw ? '' : 'min-h-screen bg-green-900 font-mono'}`}
+		>
 			{/* <input className="h-100 w-100 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-5"></input> */}
-			<div className="px-10 py-4 text-green-50 whitespace-pre-wrap flex-wrap w-10/12 m-auto placeholder-green-200 text-sm text-green-100 bg-green-700 shadow-xl rounded-lg border border-green-800">
-				{loading === true ? 'Loading...' : ''}{''}
-				{errored === true ? 'Paste not found' : ''}{''}
-				{content
-        ?.split('\n')
-					.map(e => (
-					 <p>{e}</p>
-					))}
+			<div
+				className={`${
+					props.raw
+						? ''
+						: 'px-10 py-4 text-green-50 whitespace-pre-wrap flex-wrap w-10/12 m-auto placeholder-green-200 text-sm text-green-100 bg-green-700 shadow-xl rounded-lg border border-green-800'
+				}`}
+			>
+				{loading ? 'Loading...' : ''}
+				{''}
+				{errored ? 'Paste not found' : ''}
+				{''}
+				{content?.split('\n').map(e => (
+					<p>{e}</p>
+				))}
 			</div>
 		</div>
 	);

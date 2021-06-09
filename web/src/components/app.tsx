@@ -9,6 +9,9 @@ function App() {
 		<div className="App">
 			<BrowserRouter>
 				<Switch>
+					<Route path="/raw/:id">
+						<Paste raw={true} />
+					</Route>
 					<Route path="/:id">
 						<Paste />
 					</Route>

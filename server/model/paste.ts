@@ -1,5 +1,4 @@
 import { getModelForClass, prop } from '@typegoose/typegoose';
-
 export class Paste {
 	@prop({ required: true })
 	_id!: string;
