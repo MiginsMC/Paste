@@ -36,7 +36,6 @@ export default function Paste(props: propTypes) {
 		<div
 			className={`${props.raw ? '' : 'min-h-screen bg-green-900 font-mono'}`}
 		>
-			{/* <input className="h-100 w-100 max-w-sm mx-auto bg-white rounded-xl shadow-md flex items-center space-x-5"></input> */}
 			<div
 				className={`${
 					props.raw

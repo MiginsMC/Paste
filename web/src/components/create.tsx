@@ -51,10 +51,6 @@ function Create() {
 					onChange={e => setContent(e.target.value)}
 					className="w-11/12 resize-none m-auto flex h-96	 px-4 py-4 placeholder-green-200 text-green-100 relative bg-green-500 bg-green-500 text-lg rounded-lg shadow-xl text-base border border-green-800 outline-none focus:outline-none focus:ring"
 				/>
-				{
-					// w-11/12 m-auto flex h-96 px-4 py-4 placeholder-green-200 text-green-100 relative bg-green-500 bg-green-500 text-lg rounded-lg shadow-xl text-base border border-green-800 outline-none focus:outline-none focus:ring
-					// w-11/12 mt-5 m-auto flex h-96 px-4 py-4 placeholder-green-200 text-green-100 relative bg-green-500 bg-green-500 text-lg rounded-lg shadow-xl text-base border border-green-800 outline-none focus:outline-none focus:ring
-				}
 				<button
 					type="submit"
 					className={`${
@@ -63,9 +59,6 @@ function Create() {
 				>
 					{`${loading ? 'Loading' : errored ? 'Error' : 'Paste'}`}
 				</button>
-				{
-					// px-40 py-5 my-4 m-auto flex flex-wrap items-center placeholder-green-200 text-green-100 text-xl bg-green-700 shadow-xl rounded-lg text-base border border-green-800 outline-none focus:outline-none focus:ring cursor-pointer hover:bg-green-600
-				}
 			</form>
 		</div>
 	);
