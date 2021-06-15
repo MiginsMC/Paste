@@ -47,9 +47,7 @@ export default function Paste(props: propTypes) {
 				{''}
 				{errored ? 'Paste not found' : ''}
 				{''}
-				{content?.split('\n').map(e => (
-					<p>{e}</p>
-				))}
+				{content?.split('\n').map(e => <p>{e}</p>) ?? ''}
 			</div>
 		</div>
 	);
