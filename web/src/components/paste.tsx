@@ -39,7 +39,7 @@ export default function Paste(props: propTypes) {
 			<div
 				className={`${
 					props.raw
-						? ''
+						? 'text-sm'
 						: 'px-10 py-4 text-green-50 whitespace-pre-wrap flex-wrap w-10/12 m-auto placeholder-green-200 text-sm text-green-100 bg-green-700 shadow-xl rounded-lg border border-green-800'
 				}`}
 			>

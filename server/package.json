@@ -1,5 +1,9 @@
 {
 	"main": "app.ts",
+	"license": "MIT",
+	"repository": {
+		"url": "https://github.com/MiginsMC/Paste/tree/main/server"
+	},
 	"dependencies": {
 		"@typegoose/typegoose": "^7.6.0",
 		"@types/body-parser": "^1.19.0",

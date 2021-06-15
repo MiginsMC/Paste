@@ -1,7 +1,9 @@
 {
 	"name": "paste",
-	"version": "0.1.0",
-	"private": true,
+	"license": "MIT",
+	"repository": {
+		"url": "https://github.com/MiginsMC/Paste/tree/main/web"
+	},
 	"dependencies": {
 		"@craco/craco": "^6.1.2",
 		"@testing-library/jest-dom": "^5.11.4",

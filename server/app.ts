@@ -46,7 +46,6 @@ app.delete('/api/pastes/:deleteId', async (req, res) => {
 });
 
 app.listen(port, () => console.log(`Listening on port ${port}!`));
-// https, see intellisense of listen method
 
 async function createId(): Promise<string> {
 	const id = randomBytes(3).toString('hex');
